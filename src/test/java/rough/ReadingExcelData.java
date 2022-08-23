@@ -32,5 +32,15 @@ public class ReadingExcelData {
             testRows++;
         }
         System.out.println("Total of rows in test case: " + testRows);
+
+        // Checking total of columns in test case
+
+        int testCols = 0;
+
+        while(!excel.getCellData(Constants.DATA_SHEET, testCols, dataStartRowNum).isBlank()) {
+            testCols++;
+        }
+
+        System.out.println("Total columns are: " + testCols);
     }
 }
