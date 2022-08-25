@@ -10,7 +10,7 @@ public class ReadingExcelData {
         int numberOfRowsSheet = excel.getRowCount(Constants.DATA_SHEET);
         System.out.println("Number of rows in the sheet: " + numberOfRowsSheet);
 
-        String testName = "AddCustomerTest";
+        String testName = "OpenAccountTest";
 
         // Find the test case start row
         int testCaseRowNum = 1;
@@ -41,6 +41,14 @@ public class ReadingExcelData {
             testCols++;
         }
 
-        System.out.println("Total columns are: " + testCols);
+        System.out.println("Total of columns in test are: " + testCols);
+
+        // Printing data
+
+        for(int rowNum = dataStartRowNum; rowNum < (dataStartRowNum + testRows); rowNum++) {
+            for(int colNum = 0; colNum < testCols; colNum++) {
+                System.out.println(excel.getCellData(Constants.DATA_SHEET, colNum, rowNum));
+            }
+        }
     }
 }
